@@ -12,7 +12,8 @@ from backend.models.speaker import Speaker
 from backend.routes import speaker
 from backend.models.blog import Blog
 from backend.routes import blog
-
+from backend.models.session import SessionModel
+from backend.routes import session
 app = FastAPI(
     title="AI Workshop Learning WebApp",
     version="1.0.0"
@@ -28,7 +29,7 @@ app.include_router(workshop.router)
 app.include_router(registration.router)
 app.include_router(speaker.router)
 app.include_router(blog.router)
-
+app.include_router(session.router)
 @app.get("/")
 def home():
     return {"message": "AI Workshop Learning WebApp API is running"}
