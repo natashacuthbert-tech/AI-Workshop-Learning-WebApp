@@ -8,6 +8,8 @@ from backend.routes import dashboard
 from backend.routes import workshop
 from backend.models.registration import Registration
 from backend.routes import registration
+from backend.models.speaker import Speaker
+from backend.routes import speaker
 app = FastAPI(
     title="AI Workshop Learning WebApp",
     version="1.0.0"
@@ -21,6 +23,7 @@ app.include_router(profile.router)
 app.include_router(dashboard.router)
 app.include_router(workshop.router)
 app.include_router(registration.router)
+app.include_router(speaker.router)
 
 @app.get("/")
 def home():
