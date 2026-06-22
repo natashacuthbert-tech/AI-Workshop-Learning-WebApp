@@ -9,3 +9,14 @@ def register_user(user: UserCreate):
         "message": "User registered successfully",
         "user": user
     }
+@router.get("/")
+def get_users():
+    return {
+        "users": [
+            {
+                "id": 1,
+                "full_name": "Mitchell Harper",
+                "email": "mitchell@example.com"
+            }
+        ]
+    }
